@@ -3,10 +3,10 @@
     <div class="buttons">
         <button id="CFMa">CF Major</button>
         <button id="CFMi">CF Minor</button>
-        <button id="IFOF">IFOF</button>
         <button id="CingHip">Cingulate Hippocampus</button>
         <button id="CingCing">Cingulate Cingulate</button>
         <button id="Cortico">Corticospinal</button>
+        <button id="IFOF">IFOF</button>
         <button id="ThaRad">Thalamic Radiation</button>
         <button id="SLF">SLF</button>
         <button id="ILF">ILF</button>
@@ -160,6 +160,87 @@
                                             api.hide( nodeCFMa );
                                         });
                                     }
+                                    else if ( nodes[ prop ].name === objCCL) {
+                                        nodeCCL = nodes[prop].instanceID;
+                                        console.log( 'CCL node: ' + nodeCCL);
+                                        // Add button event
+                                        buttonCC.addEventListener( 'click', function() {
+                                            api.hide( nodeCFMi );
+                                            api.hide( nodeSLFL );
+                                            api.hide( nodeSLFR );
+                                            api.hide( nodeILFL );
+                                            api.hide( nodeILFR );
+                                            api.hide( nodeArcuateL );
+                                            api.hide( nodeArcuateR );
+                                            api.show( nodeCCL );
+                                            api.show( nodeCCR );
+                                            api.hide( nodeCHL );
+                                            api.hide( nodeCHR );
+                                            api.hide( nodeCSL );
+                                            api.hide( nodeCSR );
+                                            api.hide( nodeIFOFL );
+                                            api.hide( nodeIFOFR );
+                                            api.hide( nodeTRL );
+                                            api.hide( nodeTRR );
+                                            api.hide( nodeUNCL );
+                                            api.hide( nodeUNCR );
+                                            api.hide( nodeCFMa );
+                                        });
+                                    }
+                                    else if ( nodes[ prop ].name === objCHL) {
+                                        nodeCHL = nodes[prop].instanceID;
+                                        console.log( 'CHL node: ' + nodeCHL);
+                                        // Add button event
+                                        buttonCH.addEventListener( 'click', function() {
+                                            api.hide( nodeCFMi );
+                                            api.hide( nodeSLFL );
+                                            api.hide( nodeSLFR );
+                                            api.hide( nodeILFL );
+                                            api.hide( nodeILFR );
+                                            api.hide( nodeArcuateL );
+                                            api.hide( nodeArcuateR );
+                                            api.hide( nodeCCL );
+                                            api.hide( nodeCCR );
+                                            api.show( nodeCHL );
+                                            api.show( nodeCHR );
+                                            api.hide( nodeCSL );
+                                            api.hide( nodeCSR );
+                                            api.hide( nodeIFOFL );
+                                            api.hide( nodeIFOFR );
+                                            api.hide( nodeTRL );
+                                            api.hide( nodeTRR );
+                                            api.hide( nodeUNCL );
+                                            api.hide( nodeUNCR );
+                                            api.hide( nodeCFMa );
+                                        });
+                                    }
+                                    else if ( nodes[ prop ].name === objCSL) {
+                                        nodeCSL = nodes[prop].instanceID;
+                                        console.log( 'CS L node: ' + nodeCSL);
+                                        // Add button event
+                                        buttonCS.addEventListener( 'click', function() {
+                                            api.hide( nodeCFMi );
+                                            api.hide( nodeSLFL );
+                                            api.hide( nodeSLFR );
+                                            api.hide( nodeILFL );
+                                            api.hide( nodeILFR );
+                                            api.hide( nodeArcuateL );
+                                            api.hide( nodeArcuateR );
+                                            api.hide( nodeCCL );
+                                            api.hide( nodeCCR );
+                                            api.hide( nodeCHL );
+                                            api.hide( nodeCHR );
+                                            api.show( nodeCSL );
+                                            api.show( nodeCSR );
+                                            api.hide( nodeIFOFL );
+                                            api.hide( nodeIFOFR );
+                                            api.hide( nodeTRL );
+                                            api.hide( nodeTRR );
+                                            api.hide( nodeUNCL );
+                                            api.hide( nodeUNCR );
+                                            api.hide( nodeCFMa );
+                                        });
+                                    }
                                     else if ( nodes[ prop ].name === objSLFL ) {
                                         nodeSLFL = nodes[prop].instanceID;
                                         console.log( 'SLF L node: ' + nodeSLFL );
@@ -241,87 +322,8 @@
                                             api.hide( nodeCFMa );
                                         });
                                     }
-                                    else if ( nodes[ prop ].name === objCSL) {
-                                        nodeCSL = nodes[prop].instanceID;
-                                        console.log( 'CS L node: ' + nodeCSL);
-                                        // Add button event
-                                        buttonCS.addEventListener( 'click', function() {
-                                            api.hide( nodeCFMi );
-                                            api.hide( nodeSLFL );
-                                            api.hide( nodeSLFR );
-                                            api.hide( nodeILFL );
-                                            api.hide( nodeILFR );
-                                            api.hide( nodeArcuateL );
-                                            api.hide( nodeArcuateR );
-                                            api.hide( nodeCCL );
-                                            api.hide( nodeCCR );
-                                            api.hide( nodeCHL );
-                                            api.hide( nodeCHR );
-                                            api.show( nodeCSL );
-                                            api.show( nodeCSR );
-                                            api.hide( nodeIFOFL );
-                                            api.hide( nodeIFOFR );
-                                            api.hide( nodeTRL );
-                                            api.hide( nodeTRR );
-                                            api.hide( nodeUNCL );
-                                            api.hide( nodeUNCR );
-                                            api.hide( nodeCFMa );
-                                        });
-                                    }
-                                    else if ( nodes[ prop ].name === objCCL) {
-                                        nodeCCL = nodes[prop].instanceID;
-                                        console.log( 'CCL node: ' + nodeCCL);
-                                        // Add button event
-                                        buttonCC.addEventListener( 'click', function() {
-                                            api.hide( nodeCFMi );
-                                            api.hide( nodeSLFL );
-                                            api.hide( nodeSLFR );
-                                            api.hide( nodeILFL );
-                                            api.hide( nodeILFR );
-                                            api.hide( nodeArcuateL );
-                                            api.hide( nodeArcuateR );
-                                            api.show( nodeCCL );
-                                            api.show( nodeCCR );
-                                            api.hide( nodeCHL );
-                                            api.hide( nodeCHR );
-                                            api.hide( nodeCSL );
-                                            api.hide( nodeCSR );
-                                            api.hide( nodeIFOFL );
-                                            api.hide( nodeIFOFR );
-                                            api.hide( nodeTRL );
-                                            api.hide( nodeTRR );
-                                            api.hide( nodeUNCL );
-                                            api.hide( nodeUNCR );
-                                            api.hide( nodeCFMa );
-                                        });
-                                    }
-                                    else if ( nodes[ prop ].name === objCHL) {
-                                        nodeCHL = nodes[prop].instanceID;
-                                        console.log( 'CHL node: ' + nodeCHL);
-                                        // Add button event
-                                        buttonCH.addEventListener( 'click', function() {
-                                            api.hide( nodeCFMi );
-                                            api.hide( nodeSLFL );
-                                            api.hide( nodeSLFR );
-                                            api.hide( nodeILFL );
-                                            api.hide( nodeILFR );
-                                            api.hide( nodeArcuateL );
-                                            api.hide( nodeArcuateR );
-                                            api.hide( nodeCCL );
-                                            api.hide( nodeCCR );
-                                            api.show( nodeCHL );
-                                            api.show( nodeCHR );
-                                            api.hide( nodeCSL );
-                                            api.hide( nodeCSR );
-                                            api.hide( nodeIFOFL );
-                                            api.hide( nodeIFOFR );
-                                            api.hide( nodeTRL );
-                                            api.hide( nodeTRR );
-                                            api.hide( nodeUNCL );
-                                            api.hide( nodeUNCR );
-                                            api.hide( nodeCFMa );
-                                        });
-                                    }
+
+                                    
                                     else if ( nodes[ prop ].name === objIFOFL) {
                                         nodeIFOFL = nodes[prop].instanceID;
                                         console.log( 'IFOF L node: ' + nodeIFOFL);
