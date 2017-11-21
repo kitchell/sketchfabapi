@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +25,12 @@
  //your code here
  }
  var sketchfabAPIUtility = new SketchfabAPIUtility('1b0eb975b226440e9eaa3972c066f9ee', document.getElementById('api-frame'), onSketchfabUtilityReady);
+ api.getNodeMap( function ( err, nodes ) {
+    if ( !err ) {
+        console.log( nodes );
+    }
+});
+
  </script>
 </body>
 </html>
