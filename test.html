@@ -24,21 +24,21 @@
             buttonILF= document.getElementById( 'ILF' ),
 
             // Nodes
-            nodeHeadRed ,
-            nodeHeadBlue,
-            Left_Arcuate_surf,
-            Right_Arcuate_surf,
-            Left_ILF_surf,
-            Left_SLF_surf,
+            nodeCFMa,
+            nodeCFMi,
+            nodeArcuateL,
+            nodeSLFL,
+            nodeILFL,
+            
     
 
             // Objects
-            objHeadRed = 'Callosum_Forceps_Major_surf.obj',
-            objHeadBlue = 'Callosum_Forceps_Minor_surf.obj',
-            objHeadPurple = 'Monkey_PURPLE',
+            objCFMa = 'Callosum_Forceps_Major_surf.obj',
+            objCFMi = 'Callosum_Forceps_Minor_surf.obj',
+            objArcuateL = 'Left_Arcuate_surf.obj',
 
-            objEyesGreen = 'EYES_GREEN',
-            objEyesYellow = 'EYES_YELLOW',
+            objSLFL = 'Left_SLF_surf.obj',
+            objIFLL = 'Left_ILF_surf.obj',
             
             // API version
             version = '1.0.0',
@@ -70,63 +70,75 @@
                             for ( var prop in nodes ) {
                                 if ( nodes.hasOwnProperty( prop ) ) {
                                     // Check nodes against object names
-                                    if ( nodes[ prop ].name === objHeadRed ) {
-                                        nodeHeadRed = nodes[prop].instanceID;
-                                        console.log( 'red head node: ' + nodeHeadRed );
+                                    if ( nodes[ prop ].name === objCFMa ) {
+                                        nodeCFMa = nodes[prop].instanceID;
+                                        console.log( 'CFMa node: ' + nodeCFMA );
                                         // Add button event
-                                        buttonHeadRed.addEventListener( 'click', function() {
-                                            api.hide( nodeHeadBlue );
-                                            api.hide( nodeHeadPurple );
-                                            api.show( nodeHeadRed );
+                                        buttonCFMa.addEventListener( 'click', function() {
+                                            api.hide( nodeCFMi );
+                                            api.hide( nodeSLFL );
+                                            api.hide( nodeILFL );
+                                            api.hide( nodeArcuateL);
+                                            api.show( nodeCFMa );
                                         });
                                     }
-                                    else if ( nodes[ prop ].name === objHeadBlue ) {
-                                        nodeHeadBlue = nodes[prop].instanceID;
-                                        console.log( 'blue head node: ' + nodeHeadBlue );
+                                    else if ( nodes[ prop ].name === objCFMi ) {
+                                        nodeCFMI = nodes[prop].instanceID;
+                                        console.log( 'CFMi node: ' + nodeCFMi );
                                         // Add button event
                                         buttonHeadBlue.addEventListener( 'click', function() {
-                                            api.hide( nodeHeadRed );
-                                            api.hide( nodeHeadPurple );
-                                            api.show( nodeHeadBlue );
+                                            api.hide( nodeCFMa );
+                                            api.hide( nodeSLFL );
+                                            api.hide( nodeILFL );
+                                            api.hide( nodeArcuateL);
+                                            api.show( nodeCFMi );
                                         });
                                     }
-                                    else if ( nodes[ prop ].name === objHeadPurple ) {
-                                        nodeHeadPurple = nodes[prop].instanceID;
-                                        console.log( 'purple head node: ' + nodeHeadPurple );
+                                    else if ( nodes[ prop ].name === objSLFL ) {
+                                        nodeSLFL = nodes[prop].instanceID;
+                                        console.log( 'SLF node: ' + nodeSLFL );
                                         // Add button event
-                                        buttonHeadPurple.addEventListener( 'click', function() {
-                                            api.hide( nodeHeadBlue );
-                                            api.hide( nodeHeadRed );
-                                            api.show( nodeHeadPurple );
+                                        buttonSLF.addEventListener( 'click', function() {
+                                            api.hide( nodeCFMa );
+                                            api.hide( nodeCFMi );
+                                            api.hide( nodeILFL );
+                                            api.hide( nodeArcuateL);
+                                            api.show( nodeSLFL );
                                         });
                                     }
-                                    else if ( nodes[ prop ].name === objEyesGreen ) {
-                                        nodeEyesGreen = nodes[prop].instanceID;
-                                        console.log( 'green eyes node: ' + nodeEyesGreen );
+                                    else if ( nodes[ prop ].name === objILFL) {
+                                        nodeILFL = nodes[prop].instanceID;
+                                        console.log( 'ILF node: ' + nodeILFL);
                                         // Add button event
-                                        buttonEyesGreen.addEventListener( 'click', function() {
-                                            api.hide( nodeEyesYellow );
-                                            api.show( nodeEyesGreen );
+                                        buttonILF.addEventListener( 'click', function() {
+                                            api.hide( nodeCFMa );
+                                            api.hide( nodeCFMi );
+                                            api.hide( nodeSLFL );
+                                            api.hide( nodeArcuateL);
+                                            api.show( nodeILFL );
                                         });
                                     }
-                                    else if ( nodes[ prop ].name === objEyesYellow ) {
-                                        nodeEyesYellow = nodes[prop].instanceID;
-                                        console.log( 'yellow eyes node: ' + nodeEyesYellow );
+                                    else if ( nodes[ prop ].name === objArcuateL ) {
+                                        nodeArcuateL = nodes[prop].instanceID;
+                                        console.log( 'Arcuate node: ' + nodeArcuateL);
                                         // Add button event
-                                        buttonEyesYellow.addEventListener( 'click', function() {
-                                            api.hide( nodeEyesGreen );
-                                            api.show( nodeEyesYellow );
+                                        buttonarcuate.addEventListener( 'click', function() {
+                                            api.hide( nodeCFMa );
+                                            api.hide( nodeCFMi );
+                                            api.hide( nodeSLFL );
+                                            api.hide( nodeILFL);
+                                            api.show( nodeArcuateL );
                                         });
                                     }
                                 }
                                 // When both nodes are ready, hide after
-                                if ( nodeHeadRed && nodeHeadBlue && nodeHeadPurple && nodeEyesGreen && nodeEyesYellow ) {
-                                    api.hide( nodeHeadBlue );
-                                    api.hide( nodeHeadPurple );
-                                    api.hide( nodeEyesYellow );
-                                    api.show( nodeHeadRed );
-                                    api.show( nodeEyesGreen );
-                                    console.log( 'model loaded and showing red head + green eyes' );
+                                if ( nodeCFMa && nodeCFMi && nodeSLFL && nodeILFL && nodeArcuateL ) {
+                                    api.show( nodeCFMa );
+                                    api.show( nodeCFMi );
+                                    api.show( nodeSLFL );
+                                    api.show( nodeILFL );
+                                    api.show( nodeArcuateL );
+                                    console.log( 'model loaded and showing all' );
                                     break;
                                 }
                             }
@@ -226,30 +238,3 @@
 
 
 
-
-<!DOCTYPE html>
-<html>
-<head>
- <meta charset="UTF-8">
- <title>Sketchfab Viewer API example</title>
- <script src="SketchfabAPIUtility.js"></script>
- <script type="text/javascript" src="https://d1jlf623bx36qa.cloudfront.net/api/sketchfab-viewer-1.0.0.js"></script>
-</head>
-
-<body style="width:640px;margin:0 auto;">
-
-<iframe style="border:0" width="640" height="480" src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
- <script type="text/javascript">
- function onSketchfabUtilityReady() {
- //your code here
- }
- var sketchfabAPIUtility = new SketchfabAPIUtility('1b0eb975b226440e9eaa3972c066f9ee', document.getElementById('api-frame'), onSketchfabUtilityReady);
- api.getNodeMap( function ( err, nodes ) {
-    if ( !err ) {
-        console.log( nodes );
-    }
-});
-
- </script>
-</body>
-</html>
