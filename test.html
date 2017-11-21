@@ -21,7 +21,7 @@
             buttonarcuate = document.getElementById( 'arcuate' ),
 
             buttonSLF = document.getElementById( 'SLF' ),
-            buttonILF= document.getElementById( 'ILF' ),
+            buttonILF = document.getElementById( 'ILF' ),
 
             // Nodes
             nodeCFMa,
@@ -33,12 +33,12 @@
     
 
             // Objects
-            objCFMa = '/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Callosum_Forceps_Major_surf.obj',
-            objCFMi = '/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Callosum_Forceps_Minor_surf.obj',
-            objArcuateL = '/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Left_Arcuate_surf.obj',
+            objCFMa = "/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Callosum_Forceps_Major_surf.obj",
+            objCFMi = "/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Callosum_Forceps_Minor_surf.obj",
+            objArcuateL = "/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Left_Arcuate_surf.obj",
 
-            objSLFL = '/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Left_SLF_surf.obj',
-            objILFL = '/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Left_ILF_surf.obj',
+            objSLFL = "/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Left_SLF_surf.obj",
+            objILFL = "/sketchfab-data/processing/19a6f3791cae455a8e4fd4dee2998522/preprocess/test/Left_ILF_surf.obj",
             
             // API version
             version = '1.0.0',
@@ -72,13 +72,13 @@
                                     // Check nodes against object names
                                     if ( nodes[ prop ].name === objCFMa ) {
                                         nodeCFMa = nodes[prop].instanceID;
-                                        console.log( 'CFMa node: ' + nodeCFMA );
+                                        console.log( 'CFMa node: ' + nodeCFMa );
                                         // Add button event
                                         buttonCFMa.addEventListener( 'click', function() {
                                             api.hide( nodeCFMi );
                                             api.hide( nodeSLFL );
                                             api.hide( nodeILFL );
-                                            api.hide( nodeArcuateL);
+                                            api.hide( nodeArcuateL );
                                             api.show( nodeCFMa );
                                         });
                                     }
