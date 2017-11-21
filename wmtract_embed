@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <body>
     <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
@@ -498,18 +499,15 @@
             margin: 0;
         }
         iframe {
-            width: 100%;
-            height: 100%;
+            width: 800px;
+            height: 480px;
             border: none;
         }
         /* Button style */
         .buttons {
-            margin: 32px 0;
-            left: 50%;
-            bottom: 0;
-            -webkit-transform: translate(-50%);
-            -ms-transform: translate(-50%);
-            transform: translate(-50%);
+            margin: 32px;
+            left: 10px;
+            top: 480px;
             z-index: 1;
             display: block;
             position: absolute;
