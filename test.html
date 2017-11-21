@@ -138,6 +138,28 @@
                                             api.hide( nodeUNCR );
                                             api.show( nodeCFMa );
                                         });
+                                        buttonALL.addEventListener( 'click', function() {
+                                            api.show( nodeCFMi );
+                                            api.show( nodeSLFL );
+                                            api.show( nodeSLFR );
+                                            api.show( nodeILFL );
+                                            api.show( nodeILFR );
+                                            api.show( nodeArcuateL );
+                                            api.show( nodeArcuateR );
+                                            api.show( nodeCCL );
+                                            api.show( nodeCCR );
+                                            api.show( nodeCHL );
+                                            api.show( nodeCHR );
+                                            api.show( nodeCSL );
+                                            api.show( nodeCSR );
+                                            api.show( nodeIFOFL );
+                                            api.show( nodeIFOFR );
+                                            api.show( nodeTRL );
+                                            api.show( nodeTRR );
+                                            api.show( nodeUNCL );
+                                            api.show( nodeUNCR );
+                                            api.show( nodeCFMa );
+                                        });
                                     }
                                     else if ( nodes[ prop ].name === objCFMi ) {
                                         nodeCFMi = nodes[prop].instanceID;
@@ -472,28 +494,6 @@
                                             api.show( nodeUNCR );
                                             api.show( nodeCFMa );
                                     console.log( 'model loaded and showing all' );
-                                    buttonALL.addEventListener( 'click', function() {
-                                            api.show( nodeCFMi );
-                                            api.show( nodeSLFL );
-                                            api.show( nodeSLFR );
-                                            api.show( nodeILFL );
-                                            api.show( nodeILFR );
-                                            api.show( nodeArcuateL );
-                                            api.show( nodeArcuateR );
-                                            api.show( nodeCCL );
-                                            api.show( nodeCCR );
-                                            api.show( nodeCHL );
-                                            api.show( nodeCHR );
-                                            api.show( nodeCSL );
-                                            api.show( nodeCSR );
-                                            api.show( nodeIFOFL );
-                                            api.show( nodeIFOFR );
-                                            api.show( nodeTRL );
-                                            api.show( nodeTRR );
-                                            api.show( nodeUNCL );
-                                            api.show( nodeUNCR );
-                                            api.show( nodeCFMa );
-                                        });
                                     break;
                                 }
                             }
