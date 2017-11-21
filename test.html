@@ -12,7 +12,8 @@
         <button id="Cortico">Corticospinal</button>
         <button id="IFOF">IFOF</button>
         <button id="ThaRad">Thalamic Radiation</button>
-        <button id="Unc">Uncinate</button>        
+        <button id="Unc">Uncinate</button>
+        <button id="ALL">All</button>
     </div>
     <!-- The API -->
     <script src="https://d2f25wgezub9nf.cloudfront.net/api/sketchfab-viewer-1.0.0.js"></script>
@@ -34,6 +35,7 @@
             buttonIFOF = document.getElementById( 'IFOF' ),
             buttonTR = document.getElementById( 'ThaRad' ),
             buttonUNC = document.getElementById( 'Unc' ),
+            buttonALL = document.getElementById( 'ALL' ),
 
             // Nodes
             nodeCFMa,
@@ -443,7 +445,30 @@
                                         nodeUNCR = nodes[prop].instanceID;
                                         console.log( 'UNC R node: ' + nodeUNCR);
                                     }
-                                }
+                                    buttonALL.addEventListener( 'click', function() {
+                                            api.show( nodeCFMi );
+                                            api.show( nodeSLFL );
+                                            api.show( nodeSLFR );
+                                            api.show( nodeILFL );
+                                            api.show( nodeILFR );
+                                            api.show( nodeArcuateL );
+                                            api.show( nodeArcuateR );
+                                            api.show( nodeCCL );
+                                            api.show( nodeCCR );
+                                            api.show( nodeCHL );
+                                            api.show( nodeCHR );
+                                            api.show( nodeCSL );
+                                            api.show( nodeCSR );
+                                            api.show( nodeIFOFL );
+                                            api.show( nodeIFOFR );
+                                            api.show( nodeTRL );
+                                            api.show( nodeTRR );
+                                            api.show( nodeUNCL );
+                                            api.show( nodeUNCR );
+                                            api.show( nodeCFMa );
+                                        });
+                                   
+                                
                                 // When both nodes are ready, show after
                                 if ( nodeCFMa && nodeCFMi && nodeSLFL && nodeILFL && nodeArcuateL && nodeCCL && nodeCHL && nodeCSL 
                                     && nodeIFOFL && nodeTRL && nodeUNCL && nodeSLFR && nodeILFR && nodeArcuateR && nodeCCR && nodeCHR
@@ -575,7 +600,9 @@
         #Unc {
             background: #cc211f;
         }
-
+        #ALL {
+            background: #cc211f;
+        }
     </style>
 </body>
 
